@@ -120,7 +120,7 @@ const JobPosting = ({ error, loading }) => {
     </ListItem>
   );
 
-  const RowItem = () => (
+  const RowItem = ({ first }) => (
     <ListItem
       itemDivider
       style={{
@@ -128,6 +128,7 @@ const JobPosting = ({ error, loading }) => {
         marginRight: spacing.screenPadding,
         borderRadius: 15,
         padding: 16,
+        marginTop: first || 8,
       }}
     >
       <View
@@ -166,8 +167,21 @@ const JobPosting = ({ error, loading }) => {
     <Container>
       <List style={{ paddingLeft: spacing.screenPadding }}>
         <ItemDivider title="Close to you" />
-        <FlatList horizontal renderItem={renderItem} data={['', '']} />
+        <FlatList horizontal renderItem={renderItem} data={['', '', '']} />
         <ItemDivider title="Recently added" />
+        <RowItem first />
+        <RowItem />
+        <RowItem />
+        <RowItem />
+        <RowItem />
+        <RowItem />
+        <RowItem />
+        <RowItem />
+        <RowItem />
+        <RowItem />
+        <RowItem />
+        <RowItem />
+        <RowItem />
         <RowItem />
       </List>
     </Container>

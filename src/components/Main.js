@@ -1,10 +1,11 @@
 import React from 'react';
-import { Text, ListItem, List, View, Thumbnail } from 'native-base';
+import { Text, ListItem, List, View, Thumbnail, Icon } from 'native-base';
 import { Container, Error, Loading } from './UI';
 import { errorMessages } from '../constants/messages';
 import color from '../constants/color';
 import spacing from '../constants/spacing';
 import { FlatList } from 'react-native-gesture-handler';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const JobPosting = ({ error, loading }) => {
   if (error) {
@@ -25,28 +26,72 @@ const JobPosting = ({ error, loading }) => {
           height: width,
           marginRight: 16,
           borderRadius: 15,
-          padding: spacing.interPadding + 8,
+          padding: spacing.interPadding,
         }}
       >
-        <View style={{ flex: 1 }}>
+        <View
+          style={{
+            flex: 1,
+          }}
+        >
           <View
             style={{
-              padding: 4,
-              width: 50,
               height: 50,
-              borderRadius: 15,
-              backgroundColor: color.backgroundColor,
+              flexDirection: 'row',
+              justifyContent: 'space-between',
             }}
           >
-            <Thumbnail
-              square
-              style={{
-                width: 42,
-                height: 42,
-                resizeMode: 'contain',
-              }}
-              source={{ uri: 'https://www.arla.dk/UI/img/arla-logo@2x.02d13ae2.png' }}
-            />
+            <View style={{ flex: 1 }}>
+              <View
+                style={{
+                  padding: 4,
+                  width: 50,
+                  height: 50,
+                  borderRadius: 15,
+                  backgroundColor: color.backgroundColor,
+                }}
+              >
+                <Thumbnail
+                  square
+                  style={{
+                    width: 42,
+                    height: 42,
+                    resizeMode: 'contain',
+                  }}
+                  source={{ uri: 'https://www.arla.dk/UI/img/arla-logo@2x.02d13ae2.png' }}
+                />
+              </View>
+            </View>
+
+            <View style={{ justifyContent: 'center' }}>
+              <View
+                style={{
+                  backgroundColor: color.backgroundColor,
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  padding: 8,
+                  borderRadius: 15,
+                  justifyContent: 'center',
+                }}
+              >
+                <Icon
+                  name="clockcircleo"
+                  type="AntDesign"
+                  style={{
+                    marginRight: 4,
+                    fontSize: 20,
+                  }}
+                />
+
+                <Text
+                  style={{
+                    borderRadius: 15,
+                  }}
+                >
+                  2 dage
+                </Text>
+              </View>
+            </View>
           </View>
         </View>
         <View style={{ flex: 1 }}>

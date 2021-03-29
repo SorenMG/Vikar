@@ -11,6 +11,7 @@ import theme from '../native-base-theme/variables/commonColor';
 
 import Routes from './routes/index';
 import Loading from './components/UI/Loading';
+import { Navbar } from './components/UI';
 
 class App extends React.Component {
   constructor() {
@@ -20,8 +21,10 @@ class App extends React.Component {
 
   async componentDidMount() {
     await Font.loadAsync({
+      Gilroy: require('../assets/Gilroy-Medium.ttf'),
+      GilroyLight: require('../assets/Gilroy-Light.ttf'),
+      GilroyBold: require('../assets/Gilroy-Bold.ttf'),
       Roboto: require('native-base/Fonts/Roboto.ttf'),
-      Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
       Ionicons: require('@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.ttf'),
     });
 
@@ -41,7 +44,7 @@ class App extends React.Component {
         <Provider store={store}>
           <PersistGate loading={<Loading />} persistor={persistor}>
             <StyleProvider style={getTheme(theme)}>
-              <Router>
+              <Router navBar={Navbar}>
                 <Stack key="root">{Routes}</Stack>
               </Router>
             </StyleProvider>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ListItem, Thumbnail, View, Right, Icon, Text } from 'native-base';
 import spacing from '../../constants/spacing';
-import { color } from 'react-native-reanimated';
+import color from '../../constants/color';
 
 const Row = ({ first }) => (
   <ListItem

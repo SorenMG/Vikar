@@ -25,6 +25,8 @@ const configureStore = () => {
   const persistor = getPersistor();
   const { dispatch } = store;
 
+  persistor.purge();
+
   return { persistor, store, dispatch };
 };
 

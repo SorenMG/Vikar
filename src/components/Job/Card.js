@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Thumbnail, Text, Icon } from 'native-base';
 import spacing from '../../constants/spacing';
-import { color } from 'react-native-reanimated';
+import color from '../../constants/color';
 
 const width = 200;
 const Card = () => (

@@ -32,8 +32,9 @@ class MainContainer extends Component {
    */
   render = () => {
     const { loading, error } = this.state;
+    const { listData } = this.props;
 
-    return <Layout loading={loading} error={error} />;
+    return <Layout loading={loading} error={error} listData={listData} />;
   };
 }
 
@@ -41,7 +42,9 @@ MainContainer.propTypes = {};
 
 MainContainer.defaultProps = {};
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  listData: state.jobs.listData,
+});
 
 const mapDispatchToProps = (dispatch) => ({});
 

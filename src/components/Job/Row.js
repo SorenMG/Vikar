@@ -3,15 +3,18 @@ import { ListItem, Thumbnail, View, Right, Icon, Text } from 'native-base';
 import spacing from '../../constants/spacing';
 import color from '../../constants/color';
 
-const Row = ({ first }) => (
+const Row = ({ first, onPress }) => (
   <ListItem
     itemDivider
+    onPress={onPress}
+    touchableHighlightStyle={{
+      borderRadius: 15,
+      marginTop: first || 8,
+      marginRight: spacing.screenPadding,
+    }}
     style={{
       backgroundColor: 'white',
-      marginRight: spacing.screenPadding,
       borderRadius: 15,
-      padding: 16,
-      marginTop: first || 8,
     }}
   >
     <View

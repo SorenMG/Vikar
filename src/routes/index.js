@@ -1,7 +1,6 @@
 import React from 'react';
 import { Scene, Stack } from 'react-native-router-flux';
 import DefaultProps from '../constants/navigation';
-import Detail from '../containers/Detail';
 import Main from '../containers/Main';
 
 const Index = (
@@ -15,9 +14,6 @@ const Index = (
           headerLayoutPreset="left"
           {...DefaultProps}
         />
-      </Stack>
-      <Stack key="detail">
-        <Scene key="detail" hideNavBar title="Detail" component={Detail} />
       </Stack>
     </Scene>
   </Stack>

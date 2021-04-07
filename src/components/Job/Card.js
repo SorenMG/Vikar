@@ -3,7 +3,6 @@ import { View, Thumbnail, Text, Icon } from 'native-base';
 import spacing from '../../constants/spacing';
 import color from '../../constants/color';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { Actions } from 'react-native-router-flux';
 
 const width = 200;
 const Card = (item) => (

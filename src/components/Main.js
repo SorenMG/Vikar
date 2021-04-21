@@ -10,7 +10,6 @@ import Row from './Job/Row';
 import PropTypes from 'prop-types';
 import { Dimensions, Modal, TouchableOpacity, View, Animated } from 'react-native';
 import { Modalize } from 'react-native-modalize';
-import { setStatusBarBackgroundColor } from 'expo-status-bar';
 import { getInset } from 'react-native-safe-area-view';
 import color from '../constants/color';
 
@@ -72,14 +71,6 @@ const Popup = ({ visible, onClose }) => {
   const modalizeRef = React.useRef(null);
 
   const fadeAnim = React.useRef(new Animated.Value(0)).current; // Initial value for opacity: 0
-
-  React.useEffect(() => {
-    Animated.timing(fadeAnim, {
-      toValue: 1,
-      duration: 280,
-      useNativeDriver: true,
-    }).start();
-  }, [fadeAnim]);
 
   React.useEffect(() => {
     modalizeRef.current.open();
